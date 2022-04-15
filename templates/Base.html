@@ -1,0 +1,60 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+{% block title %}
+    <title>Home</title>
+{% endblock title %}
+  </head>
+  <style>
+      .hello-msg{
+          font-size:20px;
+          color : #fff;
+          margin-right:20px
+      }
+      body
+      {
+        width:100%;
+        height:100vh;
+        }
+        .btndiv{
+        height:80%
+        }
+  </style>
+ {% block Nav %}
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+  </div>
+</nav>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+{% endblock Nav %}
+{% block body %}
+<form method="post" action="">
+    {% csrf_token %}
+   <div class="mb-3">
+    <label for="polygon1" class="form-label">polygon1</label>
+    <input type="text" class="form-control" id="polygon1" name="polygon1">
+  </div>
+    <div class="mb-3">
+    <label for="polygon2" class="form-label">polygon2</label>
+    <input type="text" class="form-control" id="polygon2" name="polygon2">
+    </div>
+    <button type="submit" class="btn btn-primary">submit</button>
+    <a href="{% url 'show_map' %}" class="btn btn-info m-2">check your map</a>
+{% endblock body %}
+  </body>
+</html>
